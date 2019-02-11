@@ -1,0 +1,62 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "$id": "https://www.github.com/",
+
+    "definitions": {
+        "#bottle": {
+            "$id": "#bottle",
+            "type" : "object",
+            "description": "Plastic or Glass bottle",
+            "properties": {
+                "name": { "enum": ["bottle"] },
+                "material": { "enum": ["plastic", "glass"]},
+                "quantity": { "type" : "integer"},
+            },
+            "required": ["name", "material", "quantity"]
+        },
+        "#bottleCap": {
+            "$id": "#bottleCap",
+            "type" : "object",
+            "description": "Plastic or metal bottle cap",
+            "properties": {
+                "name": { "enum": ["bottle cap"] },
+                "material": { "enum": ["plastic", "metal"]},
+                "quantity": { "type" : "integer"},
+            },
+            "required": ["name", "material", "quantity"]
+        },
+        "#bag" : {
+            "$id": "#bag",
+            "type": "object",
+            "description": "Plastic bag",
+            "properties": {
+                "name": { "enum": ["bag"] },
+                "material": { "enum": ["plastic"]},
+                "quantity": {"type": "integer"}
+            },
+            "required": ["name", "material", "quantity"]
+        },
+        "#straw" : {
+            "$id": "#straw",
+            "type": "object",
+            "description": "Plastic straw",
+            "properties": {
+                "name": { "enum": ["straw"] },
+                "material": { "enum": ["plastic"]},
+                "quantity": {"type": "integer"}
+            },
+            "required": ["name", "material", "quantity"]
+        },
+        "#stirrer" : {
+            "$id": "#stirrer",
+            "type": "object",
+            "description": "Drink stirrer",
+            "properties": {
+                "name": { "enum": ["stirrer"] },
+                "material": { "enum": ["plastic", "wood"]},
+                "quantity": {"type": "integer"}
+            },
+            "required": ["name", "material", "quantity"]
+        }
+    }
+}

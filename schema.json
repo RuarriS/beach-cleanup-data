@@ -1,0 +1,74 @@
+{
+    "$schema": "https://json-schema.org/schema",
+    "$id": "https://github.com/RuarriS/beachcleanupdata/schema.json",
+    "title": "BeachTrash 1.0",
+    "description": "JSON Schema for BeachTrash 1.0 data standard",
+    "properties": {
+        "$schema": "",
+        "documentTime": "",
+        "records": {
+            "type": "array",
+            "minItems": 1,
+            "items": { 
+                "description": "An amount of a particular type of litter found in a location",
+                "$ref": "#/definitions/litter" 
+            },
+            "default": []
+        }
+    },
+    "definitions": {
+        "litter": {
+            "type": "object",
+            "properties": {
+                "guid": { "type": "string"},
+                "publicationTime": { 
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updateTime": { 
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "collectedTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "partOfCollection": {
+                    "type" : "boolean"
+                },
+                "collectionId" : {
+                    "type" : "string"
+                },
+                "location": {
+                    "$ref": "#/defintions/location"
+                },
+                "item": {
+                    "type": "object",
+                    "oneOf": [
+                        { "$ref": "objects.json/#bottle" }, 
+                        { "$ref": "objects.json/#bottleCap" }, 
+                        { "$ref": "objects.json/#bag" },
+                        { "$ref": "objects.json/#straw" },
+                        { "$ref": "objects.json/#stirrer"}
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "location" : {
+            "type": "object",
+            "properties" : {
+                "id": {"type": "string"},
+                "name": {"type": "string"},
+                "coordinates": {
+                    "type": "object",
+                    "properties":{
+                        "latitude": {"type": "number"},
+                        "longitude": {"type": "number"}
+                    }
+                }
+            }
+        },
+        
+    }
+}
