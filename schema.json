@@ -11,7 +11,45 @@
             "minItems": 1,
             "items": { 
                 "description": "An amount of a particular type of litter found in a location",
-                "$ref": "#/definitions/litter" 
+                "properties": {
+                    "guid": { "type": "string"},
+                    "publicationTime": { 
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updateTime": { 
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "collectedTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "collection": {
+                        "description": "Describes whether this result is part of a larger collection event",
+                        "type": "object",
+                        "properties": {
+                            "partOfCollection": { "type": "boolean" },
+                            "id": { "type": "string"}
+                        },
+                        "required": [ "partofCollection"] 
+                    },
+                    "location": {
+                        "$ref": "#/defintions/location"
+                    },
+                    "litter": {
+                        "$ref": "#/definitions/litter"
+                    }
+                },
+                "required": [
+                    "guid",
+                    "publicationTime",
+                    "updateTime",
+                    "collectedTime",
+                    "collection",
+                    "location",
+                    "litter" 
+                ]
             },
             "default": []
         }
@@ -19,54 +57,13 @@
     "definitions": {
         "litter": {
             "type": "object",
-            "required": [
-                "guid",
-                "publicationTime",
-                "updateTime",
-                "collectedTime",
-                "collection",
-                "location",
-                "item"
-            ],
-            "properties": {
-                "guid": { "type": "string"},
-                "publicationTime": { 
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "updateTime": { 
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "collectedTime": {
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "collection": {
-                    "description": "Describes whether this result is part of a larger collection event",
-                    "type": "object",
-                    "properties": {
-                        "partOfCollection": { "type": "boolean" },
-                        "id": { "type": "string"}
-                    },
-                    "required": [ "partofCollection"] 
-                },
-            
-                "location": {
-                    "$ref": "#/defintions/location"
-                },
-                "item": {
-                    "type": "object",
-                    "oneOf": [
-                        { "$ref": "objects.json/#bottle" }, 
-                        { "$ref": "objects.json/#bottleCap" }, 
-                        { "$ref": "objects.json/#bag" },
-                        { "$ref": "objects.json/#straw" },
-                        { "$ref": "objects.json/#stirrer"}
-                    ]
-                }
-            },
-            "additionalProperties": true
+            "oneOf": [
+                { "$ref": "objects.json/#bottle" }, 
+                { "$ref": "objects.json/#bottleCap" }, 
+                { "$ref": "objects.json/#bag" },
+                { "$ref": "objects.json/#straw" },
+                { "$ref": "objects.json/#stirrer"}
+            ]
         },
         "location" : {
             "type": "object",

@@ -3,31 +3,28 @@
     "documentTime": "2018-04-04T10:00:00-05:00",
     "records": [
         {
-            "guid": "org.surfrider/8099-1-u3723",
+
             "publicationTime": "2018-04-02T08:00:00-05:00",
             "updatedTime": "2018-04-02T08:00:00-05:00",
-           
-            "litter": {
-                "guid": "org.surfrider/8099-1-u3723",
-                "collectedTime": "2018-04-02T08:00:00-05:00",
-                "collection" : {
-                    "partofCollection": true,
-                    "id": "Cleanup_CH54-123",
-                },
-                "organizationName": "Surfrider San Diego (https://sandiego.surfrider.org)",
-                "location": {
-                    "id": "8099",
-                    "name": "Oceanside Pier",
-                    "coordinates": {
-                        "latitude": 34.1234,
-                        "longitude": -117.1234
-                    }
-                },
-                "item":{
-                    "name": "bottle",
-                    "material":  "glass",
-                    "quantity": "2"
+            "guid": "org.surfrider/8099-1-u3723",
+            "collectedTime": "2018-04-02T08:00:00-05:00",
+            "collection" : {
+                "partofCollection": true,
+                "id": "Cleanup_CH54-123",
+            },
+            "organizationName": "Surfrider San Diego (https://sandiego.surfrider.org)",
+            "location": {
+                "id": "8099",
+                "name": "Oceanside Pier",
+                "coordinates": {
+                    "latitude": 34.1234,
+                    "longitude": -117.1234
                 }
+            },
+            "litter": {
+                "name": "bottle",
+                "material":  "glass",
+                "quantity": "2"
             }
         }   
     ]
