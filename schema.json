@@ -19,6 +19,15 @@
     "definitions": {
         "litter": {
             "type": "object",
+            "required": [
+                "guid",
+                "publicationTime",
+                "updateTime",
+                "collectedTime",
+                "collection",
+                "location",
+                "item"
+            ],
             "properties": {
                 "guid": { "type": "string"},
                 "publicationTime": { 
@@ -33,12 +42,16 @@
                     "type": "string",
                     "format": "date-time"
                 },
-                "partOfCollection": {
-                    "type" : "boolean"
+                "collection": {
+                    "description": "Describes whether this result is part of a larger collection event",
+                    "type": "object",
+                    "properties": {
+                        "partOfCollection": { "type": "boolean" },
+                        "id": { "type": "string"}
+                    },
+                    "required": [ "partofCollection"] 
                 },
-                "collectionId" : {
-                    "type" : "string"
-                },
+            
                 "location": {
                     "$ref": "#/defintions/location"
                 },
@@ -67,7 +80,8 @@
                         "longitude": {"type": "number"}
                     }
                 }
-            }
+            },
+            "required": ["coordinates"]
         },
         
     }
