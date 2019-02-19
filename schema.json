@@ -62,7 +62,8 @@
                 { "$ref": "objects.json/#bottleCap" }, 
                 { "$ref": "objects.json/#bag" },
                 { "$ref": "objects.json/#straw" },
-                { "$ref": "objects.json/#stirrer"}
+                { "$ref": "objects.json/#stirrer"},
+                { "$ref": "objects.json/#fishingLine"}
             ]
         },
         "location" : {

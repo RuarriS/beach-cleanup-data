@@ -57,6 +57,17 @@
                 "quantity": {"type": "integer"}
             },
             "required": ["name", "material", "quantity"]
+        },
+        "#fishingLine": {
+            "$id": "#fishingLine",
+            "type": "object",
+            "description" "Length of Fishing line",
+            "properties": {
+                "name": {"enum": ["fishing line"]},
+                "material": {"enum" : ["plastic"]},
+                "quantity": { "type": "integer"},
+                "units": {"enum": ["metric, imperial"]}
+            }
         }
     }
 }
