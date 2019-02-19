@@ -67,7 +67,8 @@
                 "material": {"enum" : ["plastic"]},
                 "quantity": { "type": "integer"},
                 "units": {"enum": ["metric, imperial"]}
-            }
+            },
+            "required": ["name", "material", "quantity", "units"]
         }
     }
 }
