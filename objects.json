@@ -10,7 +10,7 @@
             "properties": {
                 "name": { "enum": ["bottle"] },
                 "material": { "enum": ["plastic", "glass"]},
-                "quantity": { "type" : "integer"},
+                "quantity": { "type" : "integer"}
             },
             "required": ["name", "material", "quantity"]
         },
@@ -21,7 +21,7 @@
             "properties": {
                 "name": { "enum": ["bottle cap"] },
                 "material": { "enum": ["plastic", "metal"]},
-                "quantity": { "type" : "integer"},
+                "quantity": { "type" : "integer"}
             },
             "required": ["name", "material", "quantity"]
         },
