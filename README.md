@@ -1,4 +1,4 @@
-# beachcleanupdata
+# Beach Cleanup Data
 An open data standard for exchange and storage of beach litter data
 
 ## Goals
